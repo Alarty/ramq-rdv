@@ -34,7 +34,8 @@ if "gdrive_results" not in os.environ.keys():
         old_slots = None
 else:
     results_fileid, old_slots = gdrive_conn.get_byte_file(results_filename)
-    old_slots = ast.literal_eval(old_slots.decode('utf8'))
+    if old_slots is not None:
+        old_slots = ast.literal_eval(old_slots.decode('utf8'))
 print(f"Content of the json file :{old_slots}")
 
 url = 'https://outlook.office365.com/owa/calendar/RAMQ_Bureau_QC@azqmar.onmicrosoft.com/bookings/'
