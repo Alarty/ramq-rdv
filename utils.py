@@ -17,11 +17,10 @@ def send_mail(slots, url, to_email):
     subject = "New slot in RAMQ"
 
     mail_txt = "<html><head></head><body><h1>These are the currently available slots :</h1><br><br><br>"
-    for slot in slots:
-        print(slot)
-        mail_txt += f"<a href=\"{url}\">Lien direct</a><br><br>"
-        mail_txt += f"&nbsp;&nbsp;&nbsp; {slot}<br>"
-        mail_txt += "<br>"
+    print(slots)
+    mail_txt += f"<a href=\"{url}\">Lien direct</a><br><br>"
+    mail_txt += f"&nbsp;&nbsp;&nbsp; {slots}<br>"
+    mail_txt += "<br>"
     mail_txt += "</body></html>"
     # send mail through SendGrid
     sg = sendgrid.SendGridAPIClient(api_key=os.environ.get('SENDGRID_API_KEY'))
