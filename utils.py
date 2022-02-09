@@ -14,14 +14,13 @@ def send_mail(slots, url, to_email):
     :return: status code of email sent
     """
 
-    subject = "New slot in Montreal Piscines"
+    subject = "New slot in RAMQ"
 
     mail_txt = "<html><head></head><body><h1>These are the currently available slots :</h1><br><br><br>"
     for slot in slots:
         print(slot)
         mail_txt += f"<a href=\"{url}\">Lien direct</a><br><br>"
-        mail_txt += f"For the place {slot[3]} :<br>"
-        mail_txt += f"&nbsp;&nbsp;&nbsp; {slot[0]}<br>"
+        mail_txt += f"&nbsp;&nbsp;&nbsp; {slot}<br>"
         mail_txt += "<br>"
     mail_txt += "</body></html>"
     # send mail through SendGrid
