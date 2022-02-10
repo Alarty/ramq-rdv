@@ -54,6 +54,8 @@ driver.get(url)
 time.sleep(15)
 elem = driver.find_element(By.CLASS_NAME, 'right.top.serviceCard')
 elem.click()
+time.sleep(1)
+elem = driver.find_element(By.CLASS_NAME, 'right.top.serviceCard')
 print(elem.get_attribute('innerHTML'))
 time.sleep(15)
 
